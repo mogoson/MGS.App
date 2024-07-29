@@ -11,16 +11,40 @@
  *************************************************************************/
 
 using MGS.UI.Widget;
-using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace MGS.App
 {
     public class DAccountUI : UIRespondable<UserData>
     {
+        public InputField iptUser;
+        public InputField iptPassword;
+        public UIPointerListener listener;
+
+        private void Awake()
+        {
+            listener.OnPointerClickEvent += Listener_OnPointerClickEvent;
+        }
+
+        private void Listener_OnPointerClickEvent(PointerEventData data)
+        {
+            OnRefresh(new UserData());
+            if (iptPassword.contentType == InputField.ContentType.Password)
+            {
+                iptPassword.contentType = InputField.ContentType.Standard;
+            }
+            else if (iptPassword.contentType == InputField.ContentType.Standard)
+            {
+                iptPassword.contentType = InputField.ContentType.Password;
+            }
+            OnRefresh(Option);
+        }
+
         protected override void OnRefresh(UserData option)
         {
-            //TODO...
-            Debug.LogWarning("DAccountUI.OnRefresh is not implemented.");
+            iptUser.text = option.userName;
+            iptPassword.text = option.password;
         }
     }
 }

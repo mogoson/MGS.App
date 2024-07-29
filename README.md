@@ -1,0 +1,2 @@
+# MGS.App
+Template Application

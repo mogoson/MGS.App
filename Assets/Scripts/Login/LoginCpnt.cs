@@ -83,6 +83,7 @@ namespace MGS.App
             userData = LoadLoginData(loginFile);
             if (userData.CheckValid() && userData.isLogined)
             {
+                loginUI.SetActive(false);
                 onLogined?.Invoke(userData);
             }
             else

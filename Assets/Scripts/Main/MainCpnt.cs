@@ -44,7 +44,7 @@ namespace MGS.App
             builder.Append($"Organization: {appInfo.organization}\r\n\r\n");
             builder.Append($"Developer: {appInfo.developer}\r\n\r\n");
             builder.Append($"Contact: {appInfo.contact}\r\n\r\n");
-            builder.Append($"Copyright: {appInfo.copyright}");
+            builder.Append($"{appInfo.copyright}");
             return builder.ToString();
         }
 

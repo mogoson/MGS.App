@@ -33,7 +33,6 @@ namespace MGS.App.Editors
                 appName = PlayerSettings.productName,
                 version = PlayerSettings.bundleVersion,
                 lastUpdated = DateTime.Now.ToShortDateString(),
-                organization = "MGS",
                 developer = PlayerSettings.companyName,
                 contact = "mogoson@outlook.com",
                 copyright = $"Copyright (C) {DateTime.Now.Year} {PlayerSettings.companyName}. All rights reserved.",

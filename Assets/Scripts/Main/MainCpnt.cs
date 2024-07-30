@@ -41,7 +41,6 @@ namespace MGS.App
             builder.Append($"{appInfo.appName}\r\n\r\n");
             builder.Append($"Version: {appInfo.version}\r\n\r\n");
             builder.Append($"Last Updated: {appInfo.lastUpdated}\r\n\r\n");
-            builder.Append($"Organization: {appInfo.organization}\r\n\r\n");
             builder.Append($"Developer: {appInfo.developer}\r\n\r\n");
             builder.Append($"Contact: {appInfo.contact}\r\n\r\n");
             builder.Append($"{appInfo.copyright}");

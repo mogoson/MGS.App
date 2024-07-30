@@ -23,7 +23,6 @@ namespace MGS.App
         public event Action<UserData> OnLogOutEvent;
 
         public Text txtAppName;
-        public Text txtOrganization;
         public OptionsUI optionsUI;
 
         protected void Awake()
@@ -41,7 +40,6 @@ namespace MGS.App
         public void Refresh(AppInfo appInfo)
         {
             txtAppName.text = appInfo.appName;
-            txtOrganization.text = appInfo.organization;
         }
 
         public void Refresh(SettingsData data)

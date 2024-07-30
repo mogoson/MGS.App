@@ -17,7 +17,6 @@ namespace MGS.App
         public string appName;
         public string version;
         public string lastUpdated;
-        public string organization;
         public string developer;
         public string contact;
         public string copyright;

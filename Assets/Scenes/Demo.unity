@@ -752,10 +752,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoginUI
       objectReference: {fileID: 0}
-    - target: {fileID: 4567106855709286048, guid: eb7834cc6eb9ca04fbb5ea5daead6d50, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4567106855709286049, guid: eb7834cc6eb9ca04fbb5ea5daead6d50, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

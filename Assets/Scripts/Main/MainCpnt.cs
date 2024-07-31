@@ -12,6 +12,7 @@
 
 using System;
 using System.Text;
+using MGS.UI.Widget;
 
 namespace MGS.App
 {
@@ -20,9 +21,11 @@ namespace MGS.App
         public event Action<UserData> OnLogOutEvent;
 
         MainUI mainUI;
+        UIDialog dialogUI;
 
         public MainCpnt()
         {
+            dialogUI = UnityEngine.Object.FindObjectOfType<UIDialog>(true);
             mainUI = UnityEngine.Object.FindObjectOfType<MainUI>(true);
             mainUI.mePageUI.OnLogOutEvent += OnLogOut;
 
@@ -55,8 +58,26 @@ namespace MGS.App
 
         void OnLogOut(UserData data)
         {
-            mainUI.SetActive(false);
-            OnLogOutEvent?.Invoke(data);
+            var options = new UIDialogOption()
+            {
+                tittle = "Logout Confirm",
+                closeButton = true,
+                content = "Are you sure log out?",
+                cancelButton = "Cancel",
+                yesButton = "OK",
+                callback = OnDialogResult
+            };
+            dialogUI.Refresh(options);
+            dialogUI.SetActive();
+
+            void OnDialogResult(UIDialogResult result)
+            {
+                if (result == UIDialogResult.Yes)
+                {
+                    mainUI.SetActive(false);
+                    OnLogOutEvent?.Invoke(data);
+                }
+            }
         }
     }
 }
